@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-// import 'package:ocr_app/controllers/camera_screen.dart';
-import 'package:ocr_app/controllers/extraction_screen.dart';
+import 'package:ocr_app/controllers/camera_screen.dart';
+// import 'package:ocr_app/controllers/extraction_screen.dart';
 // import 'package:ocr_app/controllers/translate_screen.dart';
 
 void main() {
@@ -20,8 +20,8 @@ class MyApp extends StatelessWidget {
       /* theme: ThemeData(
         primaryColor: Colors.black
       ), */
-      // home: const CameraScreen(),
-      home: const ExtractionScreen(text: 'Hello World'),
+      home: const CameraScreen(),
+      // home: const ExtractionScreen(text: 'Hello World'),
       // home: const TranslateScreen(originalText: 'Hello World', text: 'Salut tout le monde'),
       debugShowCheckedModeBanner: false,
     );

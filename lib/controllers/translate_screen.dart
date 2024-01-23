@@ -12,37 +12,78 @@ class TranslateScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: true,
+        title: const Text('Translated Text',),
+        centerTitle: true,
+        backgroundColor: Colors.blue,
+        automaticallyImplyLeading: true ,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          }, 
+          icon: const Icon(Icons.arrow_back_ios_new),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () async {
+              await Share.share(text);
+            }, 
+            icon: const Icon(Icons.share),
+          ),
+          IconButton(
+            onPressed: () async {
+              await Clipboard.setData(ClipboardData(text: text));
+              // ignore: use_build_context_synchronously
+              /* ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text('Text copied to clipboard.'),
+                ),
+              ); */
+            }, 
+            icon: const Icon(Icons.copy),
+          ),
+        ],
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(10),
+          ),
+        ),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        // mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                TextField(
-                  controller: TextEditingController(text: originalText),
-                  readOnly: true,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Original Text',
+            padding: const EdgeInsets.all(30.0),
+            child: Center(
+              child: Column(
+                // crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  const SizedBox(height: 50.0,),
+                  TextField(
+                    scrollPhysics: const BouncingScrollPhysics(),
+                    maxLines: 10,
+                    controller: TextEditingController(text: originalText),
+                    readOnly: true,
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Original Text',
+                    ),
                   ),
-                ),
-                const SizedBox(height: 30.0,),
-                TextField(
-                  controller: TextEditingController(text: text),
-                  readOnly: true,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Translated Text',
+                  const SizedBox(height: 50.0,),
+                  TextField(
+                    scrollPhysics: const BouncingScrollPhysics(),
+                    maxLines: 10,
+                    controller: TextEditingController(text: text),
+                    readOnly: true,
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Translated Text',
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
-          Row(
+          /* Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               FloatingActionButton(
@@ -71,7 +112,7 @@ class TranslateScreen extends StatelessWidget {
                 child: const Icon(Icons.copy),
               ),
             ],
-          ),
+          ), */
         ]
       ),
     );

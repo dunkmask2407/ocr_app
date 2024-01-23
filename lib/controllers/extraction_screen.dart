@@ -13,14 +13,49 @@ class ExtractionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: const Text('Extracted Text'),
+        centerTitle: true,
+        backgroundColor: Colors.blue,
         automaticallyImplyLeading: true,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          }, 
+          icon: const Icon(Icons.arrow_back_ios_new),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () async {
+              await Share.share(text);
+            }, 
+            icon: const Icon(Icons.share),
+          ),
+          IconButton(
+            onPressed: () async {
+              await Clipboard.setData(ClipboardData(text: text));
+              // ignore: use_build_context_synchronously
+              /* ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text('Text copied to clipboard.'),
+                ),
+              ); */
+            }, 
+            icon: const Icon(Icons.copy),
+          ),],
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(10),
+            ),
+          ),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [ 
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(30.0),
             child: TextField(
+                  scrollPhysics: const BouncingScrollPhysics(),
+                  maxLines: 20,
                   controller: TextEditingController(text: text),
                   readOnly: true,
                   decoration: const InputDecoration(
@@ -32,7 +67,7 @@ class ExtractionScreen extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              FloatingActionButton(
+              /* FloatingActionButton(
                 backgroundColor: Colors.blue,
                 shape: const CircleBorder(),
                 tooltip: 'Share text',
@@ -41,7 +76,7 @@ class ExtractionScreen extends StatelessWidget {
                 }, 
                 child: const Icon(Icons.share),
               ),
-              const SizedBox(width: 10.0,),
+              const SizedBox(width: 10.0,), */
               FloatingActionButton(
                 backgroundColor: Colors.blue,
                 shape: const CircleBorder(),
@@ -53,7 +88,7 @@ class ExtractionScreen extends StatelessWidget {
                 }, 
                 child: const Icon(Icons.translate),
               ),
-              const SizedBox(width: 10.0,),
+              /* const SizedBox(width: 10.0,),
               FloatingActionButton(
                 backgroundColor: Colors.blue,
                 shape: const CircleBorder(),
@@ -68,7 +103,7 @@ class ExtractionScreen extends StatelessWidget {
                   );
                 }, 
                 child: const Icon(Icons.copy),
-              ),
+              ), */
             ],
           ),
         ]

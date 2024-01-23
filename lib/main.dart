@@ -21,8 +21,13 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.black
       ), */
       home: const CameraScreen(),
-      // home: const ExtractionScreen(text: 'Hello World'),
-      // home: const TranslateScreen(originalText: 'Hello World', text: 'Salut tout le monde'),
+      // home: const ExtractionScreen(text: 'Hello World azerytycvcvsdivbvazbvqqqqqqqqqsdjqsdqsdjcqsdcqsdqsdcqsdjicqsdocvhqsjsdjvcqsdvcsdhucsdjcqsdjcqsdjcvsdocqzdgqdsjsdbsdcgsdqhsdcsduhvsdhcvsdhcsdcqsvquccvscvsdsvqdqsdqsdsdcsdcvhqsdcdsdvzucozeuzevhvzoucvjzeizdcvqzdvgczepuczuicdcgyusecseguocvhzefvqsdcvhyuzsguicvzd sv gszcgqgqshchvqsdcqsdhucvasdhvcsdvsdvsd dhdvaszdvvc dvhyusfcvhzdcvqsdgcvuze'),
+      // home: const TranslateScreen(originalText: 'Hello World azerytycvcvsdivbvazbvqqqqqqqqqsdjqsdqsdjcqsdcqsdqsdcqsdjicqsdocvhqsjsdjvcqsdvcsdhucsdjcqsdjcqsdjcvsdocqzdgqdsjsdbsdcgsdqhsdcsduhvsdhcvsdhcsdcqsvquccvscvsdsvqdqsdqsdsdcsdcvhqsdcdsdvzucozeuzevhvzoucvjzeizdcvqzdvgczepuczuicdcgyusecseguocvhzefvqsdcvhyuzsguicvzd sv gszcgqgqshchvqsdcqsdhucvasdhvcsdvsdvsd dhdvaszdvvc dvhyusfcvhzdcvqsdgcvuze', text: 'Salut tout le monde azerytycvcvsdivbvazbvqqqqqqqqqsdjqsdqsdjcqsdcqsdqsdcqsdjicqsdocvhqsjsdjvcqsdvcsdhucsdjcqsdjcqsdjcvsdocqzdgqdsjsdbsdcgsdqhsdcsduhvsdhcvsdhcsdcqsvquccvscvsdsvqdqsdqsdsdcsdcvhqsdcdsdvzucozeuzevhvzoucvjzeizdcvqzdvgczepuczuicdcgyusecseguocvhzefvqsdcvhyuzsguicvzd sv gszcgqgqshchvqsdcqsdhucvasdhvcsdvsdvsd dhdvaszdvvc dvhyusfcvhzdcvqsdgcvuze'),
+      /* routes: <String, WidgetBuilder> {
+      '/a': (BuildContext context) => const CameraScreen(),
+      '/b': (BuildContext context) => const ExtractionScreen(text:''),
+      '/c': (BuildContext context) => const TranslateScreen(originalText: '', text: ''),
+      }, */
       debugShowCheckedModeBanner: false,
     );
   }

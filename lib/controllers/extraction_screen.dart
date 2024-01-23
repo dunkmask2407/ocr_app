@@ -18,14 +18,17 @@ class ExtractionScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [ 
-          TextField(
-                controller: TextEditingController(text: text),
-                readOnly: true,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Extracted Text',
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+                  controller: TextEditingController(text: text),
+                  readOnly: true,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Extracted Text',
+                  ),
                 ),
-              ),
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

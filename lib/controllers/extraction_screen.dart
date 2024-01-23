@@ -13,34 +13,38 @@ class ExtractionScreen extends StatelessWidget {
         automaticallyImplyLeading: true,
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [ 
           Container(
             padding: const EdgeInsets.all(30.0),
             child: Text(text),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              FloatingActionButton(
-                backgroundColor: Colors.blue,
-                shape: const CircleBorder(),
-                tooltip: 'Share text',
-                onPressed: () async {
-                  await Share.share(text);
-                }, 
-                child: const Icon(Icons.share),
-              ),
-              const SizedBox(width: 20.0,),
-              FloatingActionButton(
-                backgroundColor: Colors.blue,
-                shape: const CircleBorder(),
-                tooltip: 'Copy text',
-                onPressed: () async {
-                  await Clipboard.setData(ClipboardData(text: text));
-                }, 
-                child: const Icon(Icons.copy),
-              ),
-            ],
+          Positioned(
+            bottom: 0,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                FloatingActionButton(
+                  backgroundColor: Colors.blue,
+                  shape: const CircleBorder(),
+                  tooltip: 'Share text',
+                  onPressed: () async {
+                    await Share.share(text);
+                  }, 
+                  child: const Icon(Icons.share),
+                ),
+                const SizedBox(width: 10.0,),
+                FloatingActionButton(
+                  backgroundColor: Colors.blue,
+                  shape: const CircleBorder(),
+                  tooltip: 'Copy text',
+                  onPressed: () async {
+                    await Clipboard.setData(ClipboardData(text: text));
+                  }, 
+                  child: const Icon(Icons.copy),
+                ),
+              ],
+            ),
           ),
         ]
       ),

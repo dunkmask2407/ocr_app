@@ -54,7 +54,8 @@ class ExtractionScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(30.0),
             child: TextField(
-                  scrollPhysics: const BouncingScrollPhysics(),
+              scrollController: ScrollController(),
+                  // scrollPhysics: const BouncingScrollPhysics(),
                   maxLines: 20,
                   controller: TextEditingController(text: text),
                   readOnly: true,

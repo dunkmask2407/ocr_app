@@ -59,7 +59,8 @@ class TranslateScreen extends StatelessWidget {
                 children: [
                   const SizedBox(height: 50.0,),
                   TextField(
-                    scrollPhysics: const BouncingScrollPhysics(),
+                    scrollController: ScrollController(),
+                    // scrollPhysics: const BouncingScrollPhysics(),
                     maxLines: 10,
                     controller: TextEditingController(text: originalText),
                     readOnly: true,
@@ -70,7 +71,8 @@ class TranslateScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 50.0,),
                   TextField(
-                    scrollPhysics: const BouncingScrollPhysics(),
+                    scrollController: ScrollController(),
+                    // scrollPhysics: const BouncingScrollPhysics(),
                     maxLines: 10,
                     controller: TextEditingController(text: text),
                     readOnly: true,

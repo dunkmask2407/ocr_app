@@ -1,4 +1,8 @@
-# OCR App - Optical Character Recongnition Application.
+# OCR App - Optical Character Recongnition Application.  
+
+## IMPORTANT  
+
+Before debugging the application, type the following commands in a terminal in sequence.  
 
 A new Flutter project.
 

@@ -21,8 +21,8 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.black
       ), */
       home: const CameraScreen(),
-      // home: const ExtractionScreen(text: 'Hello World azerytycvcvsdivbvazbvqqqqqqqqqsdjqsdqsdjcqsdcqsdqsdcqsdjicqsdocvhqsjsdjvcqsdvcsdhucsdjcqsdjcqsdjcvsdocqzdgqdsjsdbsdcgsdqhsdcsduhvsdhcvsdhcsdcqsvquccvscvsdsvqdqsdqsdsdcsdcvhqsdcdsdvzucozeuzevhvzoucvjzeizdcvqzdvgczepuczuicdcgyusecseguocvhzefvqsdcvhyuzsguicvzd sv gszcgqgqshchvqsdcqsdhucvasdhvcsdvsdvsd dhdvaszdvvc dvhyusfcvhzdcvqsdgcvuze'),
-      // home: const TranslateScreen(originalText: 'Hello World azerytycvcvsdivbvazbvqqqqqqqqqsdjqsdqsdjcqsdcqsdqsdcqsdjicqsdocvhqsjsdjvcqsdvcsdhucsdjcqsdjcqsdjcvsdocqzdgqdsjsdbsdcgsdqhsdcsduhvsdhcvsdhcsdcqsvquccvscvsdsvqdqsdqsdsdcsdcvhqsdcdsdvzucozeuzevhvzoucvjzeizdcvqzdvgczepuczuicdcgyusecseguocvhzefvqsdcvhyuzsguicvzd sv gszcgqgqshchvqsdcqsdhucvasdhvcsdvsdvsd dhdvaszdvvc dvhyusfcvhzdcvqsdgcvuze', text: 'Salut tout le monde azerytycvcvsdivbvazbvqqqqqqqqqsdjqsdqsdjcqsdcqsdqsdcqsdjicqsdocvhqsjsdjvcqsdvcsdhucsdjcqsdjcqsdjcvsdocqzdgqdsjsdbsdcgsdqhsdcsduhvsdhcvsdhcsdcqsvquccvscvsdsvqdqsdqsdsdcsdcvhqsdcdsdvzucozeuzevhvzoucvjzeizdcvqzdvgczepuczuicdcgyusecseguocvhzefvqsdcvhyuzsguicvzd sv gszcgqgqshchvqsdcqsdhucvasdhvcsdvsdvsd dhdvaszdvvc dvhyusfcvhzdcvqsdgcvuze'),
+      // home: const ExtractionScreen(text: 'Hello World!!!'),
+      // home: const TranslateScreen(originalText: 'Hello World!!!', text: 'Hello World!!!', sourceLang: 'en', targetLang: 'es'),
       /* routes: <String, WidgetBuilder> {
       '/a': (BuildContext context) => const CameraScreen(),
       '/b': (BuildContext context) => const ExtractionScreen(text:''),

@@ -5,8 +5,12 @@ import 'package:share_plus/share_plus.dart';
 class TranslateScreen extends StatelessWidget {
     final String text;
     final String originalText;
+    // ignore: prefer_typing_uninitialized_variables
+    final sourceLang;
+    // ignore: prefer_typing_uninitialized_variables
+    final targetLang;
 
-  const TranslateScreen({super.key, required this.originalText, required this.text});
+  const TranslateScreen({super.key, required this.originalText, required this.text, required this.sourceLang, required this.targetLang,});
 
   @override
   Widget build(BuildContext context) {
@@ -17,36 +21,30 @@ class TranslateScreen extends StatelessWidget {
         backgroundColor: Colors.blue,
         automaticallyImplyLeading: true ,
         leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios_new),
           onPressed: () {
             Navigator.pop(context);
           }, 
-          icon: const Icon(Icons.arrow_back_ios_new),
         ),
         actions: [
           IconButton(
+            icon: const Icon(Icons.share),
             onPressed: () async {
               await Share.share(text);
             }, 
-            icon: const Icon(Icons.share),
           ),
           IconButton(
+            icon: const Icon(Icons.copy),
             onPressed: () async {
               await Clipboard.setData(ClipboardData(text: text));
               // ignore: use_build_context_synchronously
-              /* ScaffoldMessenger.of(context).showSnackBar(
+              ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(
                   content: Text('Text copied to clipboard.'),
                 ),
-              ); */
+              );
             }, 
-            icon: const Icon(Icons.copy),
-          ),
-        ],
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(10),
-          ),
-        ),
+          ),],
       ),
       body: Column(
         // mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -64,9 +62,9 @@ class TranslateScreen extends StatelessWidget {
                     maxLines: 10,
                     controller: TextEditingController(text: originalText),
                     readOnly: true,
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'Original Text',
+                    decoration: InputDecoration(
+                      border: const OutlineInputBorder(),
+                      labelText: 'Original in ${sourceLang.toUpperCase()}',
                     ),
                   ),
                   const SizedBox(height: 50.0,),
@@ -76,9 +74,9 @@ class TranslateScreen extends StatelessWidget {
                     maxLines: 10,
                     controller: TextEditingController(text: text),
                     readOnly: true,
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'Translated Text',
+                    decoration: InputDecoration(
+                      border: const OutlineInputBorder(),
+                      labelText: 'Translated in ${targetLang.toUpperCase()}',
                     ),
                   ),
                 ],

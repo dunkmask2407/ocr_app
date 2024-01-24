@@ -51,7 +51,6 @@ class CameraScreenState extends State<CameraScreen> with WidgetsBindingObserver 
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
     _stopCamera();
-    _textRecognizer.close();
     super.dispose();
   }
 
@@ -86,7 +85,7 @@ class CameraScreenState extends State<CameraScreen> with WidgetsBindingObserver 
                         builder: (context) {
                           return IconButton(
                             onPressed: _scanImage, 
-                            icon: const Icon(Icons.camera),
+                            icon: const Icon(Icons.camera, size: 70.0,),
                             focusColor: Colors.blue,
                             tooltip: 'Extract text',
                           );
@@ -175,6 +174,7 @@ class CameraScreenState extends State<CameraScreen> with WidgetsBindingObserver 
       final file = File(pictureFile.path);
       final inputImage = InputImage.fromFile(file);
       final recognizedText = await _textRecognizer.processImage(inputImage);
+      await _textRecognizer.close();
       await navigator.push(
         MaterialPageRoute(
           builder: (context) => ExtractionScreen(text: recognizedText.text),

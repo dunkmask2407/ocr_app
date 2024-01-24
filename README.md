@@ -2,7 +2,11 @@
 
 ## IMPORTANT  
 
-Before debugging the application, type the following commands in a terminal in sequence.  
+Before debugging the application, type the following commands in a terminal in sequence:  
++ flutter clean  
++ flutter pub get  
++ flutter pub run flutter_launcher_icons  
++ flutter pub run flutter_native_splash:create  
 
 A new Flutter project.
 

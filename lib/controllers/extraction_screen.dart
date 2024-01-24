@@ -85,6 +85,17 @@ class ExtractionScreen extends StatelessWidget {
                   // ignore: unnecessary_null_comparison
                   if (text == null) return;
                   _translateText(context, text);
+                  /* try {
+                    final navigator = Navigator.of(context);
+                    await navigator.push(
+                      MaterialPageRoute(
+                        builder: (context) => TranslateScreen(originalText: text, text: text,),
+                      ),
+                    );
+                  } catch (e) {
+                    // ignore: avoid_print
+                    print('Error: $e');
+                  } */
                 }, 
                 child: const Icon(Icons.translate),
               ),
